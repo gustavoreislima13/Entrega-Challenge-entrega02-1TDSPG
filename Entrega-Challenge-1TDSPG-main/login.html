@@ -16,66 +16,59 @@
         </div>
         <div class="nav-menu" id="navMenu">
             <ul>
-                <li><a href="#" class="link active">Home</a></li>
-                <li><a href="#" class="link">Blog</a></li>
-                <li><a href="#" class="link">Services</a></li>
-                <li><a href="#" class="link">About</a></li>
+                <li><a href="./index.html" class="link active">Home</a></li>
+                <li><a href="./news.html" class="link">Serviços</a></li>
+                <li><a href="./contact.html" class="link">Contato</a></li>
+             
             </ul>
         </div>
         <div class="nav-button">
-            <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button>
-            <button class="btn" id="registerBtn" onclick="register()">Sign Up</button>
-        </div>
         <div class="nav-menu-btn">
             <i class="bx bx-menu" onclick="myMenuFunction()"></i>
         </div>
     </nav>
 
-<!----------------------------- Form box ----------------------------------->    
     <div class="form-box">
         
-        <!------------------- login form -------------------------->
-
         <div class="login-container" id="login">
             <div class="top">
-                <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
+                <span>Já tem conta? <a href="#" onclick="register()">Sign Up</a></span>
                 <header>Login</header>
             </div>
             <div class="input-box">
-                <input type="text" class="input-field" placeholder="Username or Email">
+                <input type="text" class="input-field" placeholder="Email">
                 <i class="bx bx-user"></i>
             </div>
             <div class="input-box">
-                <input type="password" class="input-field" placeholder="Password">
+                <input type="password" class="input-field" placeholder="Senha">
                 <i class="bx bx-lock-alt"></i>
             </div>
             <div class="input-box">
-                <input type="submit" class="submit" value="Sign In">
+                <input type="submit" class="submit" value="Login">
             </div>
             <div class="two-col">
                 <div class="one">
                     <input type="checkbox" id="login-check">
-                    <label for="login-check"> Remember Me</label>
+                    <label for="login-check"> Lembre de min</label>
                 </div>
                 <div class="two">
-                    <label><a href="#">Forgot password?</a></label>
+                    <label><a href="#">Esqueceu a senha?</a></label>
                 </div>
             </div>
         </div>
 
-        <!------------------- registration form -------------------------->
         <div class="register-container" id="register">
             <div class="top">
-                <span>Have an account? <a href="#" onclick="login()">Login</a></span>
-                <header>Sign Up</header>
+                <span>Já tem conta? <a href="#" onclick="login()">Login</a></span>
+                <header>Cadastra</header>
             </div>
             <div class="two-forms">
                 <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Firstname">
+                    <input type="text" class="input-field" placeholder="Nome">
                     <i class="bx bx-user"></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Lastname">
+                    <input type="text" class="input-field" placeholder="Sobrenome">
                     <i class="bx bx-user"></i>
                 </div>
             </div>
@@ -84,19 +77,19 @@
                 <i class="bx bx-envelope"></i>
             </div>
             <div class="input-box">
-                <input type="password" class="input-field" placeholder="Password">
+                <input type="password" class="input-field" placeholder="Senha">
                 <i class="bx bx-lock-alt"></i>
             </div>
             <div class="input-box">
-                <input type="submit" class="submit" value="Register">
+                <input type="submit" class="submit" value="Cadastra">
             </div>
             <div class="two-col">
                 <div class="one">
                     <input type="checkbox" id="register-check">
-                    <label for="register-check"> Remember Me</label>
+                    <label for="register-check">Lembre de min</label>
                 </div>
                 <div class="two">
-                    <label><a href="#">Terms & conditions</a></label>
+                    <label><a href="#">Tremos e condiçoes</a></label>
                 </div>
             </div>
         </div>
