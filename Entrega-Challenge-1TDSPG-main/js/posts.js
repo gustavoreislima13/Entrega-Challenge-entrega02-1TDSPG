@@ -1,6 +1,6 @@
 var posts = [
   {
-    "imagemm": "imagens/bem-estar.png",
+    "imagemm": "imagens/bem-estar",
     "titulo": "Plataforma de Bem-Estar",
     "autor": "Porto Seguro",
     "imagem_post": "imagens/bem-estar1110.png",
