@@ -50,7 +50,6 @@ body {
 
 
 
-/* SIDEBAR */
 #sidebar {
 	position: fixed;
 	top: 0;
@@ -157,13 +156,11 @@ body {
 	display: flex;
 	justify-content: center;
 }
-/* SIDEBAR */
 
 
 
 
 
-/* CONTENT */
 #content {
 	position: relative;
 	width: calc(100% - 280px);
@@ -178,7 +175,6 @@ body {
 
 
 
-/* NAVBAR */
 #content nav {
 	height: 56px;
 	background: var(--light);
@@ -300,13 +296,12 @@ body {
 #content nav #switch-mode:checked + .switch-mode::before {
 	left: calc(100% - (25px - 4px) - 2px);
 }
-/* NAVBAR */
 
 
 
 
 
-/* MAIN */
+
 #content main {
 	width: 100%;
 	padding: 36px 24px;
@@ -515,8 +510,7 @@ body {
 #content main .table-data .todo .todo-list li:last-child {
 	margin-bottom: 0;
 }
-/* MAIN */
-/* CONTENT */
+
 
 
 

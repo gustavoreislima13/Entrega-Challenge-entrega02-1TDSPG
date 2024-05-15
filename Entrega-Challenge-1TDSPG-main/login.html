@@ -19,7 +19,6 @@
                 <li><a href="./index.html" class="link active">Home</a></li>
                 <li><a href="./news.html" class="link">Serviços</a></li>
                 <li><a href="./contact.html" class="link">Contato</a></li>
-             
             </ul>
         </div>
         <div class="nav-button">
@@ -29,21 +28,20 @@
     </nav>
 
     <div class="form-box">
-        
         <div class="login-container" id="login">
             <div class="top">
                 <span>Já tem conta? <a href="#" onclick="register()">Sign Up</a></span>
                 <header>Login</header>
             </div>
-            <div class="input-box">
-                <input type="text" class="input-field" placeholder="Email">
-                <i class="bx bx-user"></i>
-            </div>
-            <div class="input-box">
-                <input type="password" class="input-field" placeholder="Senha">
-                <i class="bx bx-lock-alt"></i>
-            </div>
-            <form action="./dashboard.html" method="get">
+            <form onsubmit="return validateLoginForm()">
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Email" id="login-email">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Senha" id="login-password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
                 <div class="input-box"> 
                     <input type="submit" class="submit" value="Login">
                 </div>
@@ -64,27 +62,29 @@
                 <span>Já tem conta? <a href="#" onclick="login()">Login</a></span>
                 <header>Cadastra</header>
             </div>
-            <div class="two-forms">
-                <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Nome">
-                    <i class="bx bx-user"></i>
+            <form onsubmit="return validateRegisterForm()">
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Nome">
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Sobrenome">
+                        <i class="bx bx-user"></i>
+                    </div>
                 </div>
                 <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Sobrenome">
-                    <i class="bx bx-user"></i>
+                    <input type="text" class="input-field" placeholder="Email" id="register-email">
+                    <i class="bx bx-envelope"></i>
                 </div>
-            </div>
-            <div class="input-box">
-                <input type="text" class="input-field" placeholder="Email">
-                <i class="bx bx-envelope"></i>
-            </div>
-            <div class="input-box">
-                <input type="password" class="input-field" placeholder="Senha">
-                <i class="bx bx-lock-alt"></i>
-            </div>
-            <div class="input-box">
-                <input type="submit" class="submit" value="Cadastra" >
-            </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Senha" id="register-password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Cadastra">
+                </div>
+            </form>
             <div class="two-col">
                 <div class="one">
                     <input type="checkbox" id="register-check">
@@ -98,46 +98,62 @@
     </div>
 </div>   
 
-
 <script>
-   
-   function myMenuFunction() {
-    var i = document.getElementById("navMenu");
-
-    if(i.className === "nav-menu") {
-        i.className += " responsive";
-    } else {
-        i.className = "nav-menu";
+    function myMenuFunction() {
+        var i = document.getElementById("navMenu");
+        if(i.className === "nav-menu") {
+            i.className += " responsive";
+        } else {
+            i.className = "nav-menu";
+        }
     }
-   }
- 
-</script>
-
-<script>
-
-    var a = document.getElementById("loginBtn");
-    var b = document.getElementById("registerBtn");
-    var x = document.getElementById("login");
-    var y = document.getElementById("register");
 
     function login() {
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
         x.style.left = "4px";
         y.style.right = "-520px";
-        a.className += " white-btn";
-        b.className = "btn";
         x.style.opacity = 1;
         y.style.opacity = 0;
     }
 
     function register() {
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
         x.style.left = "-510px";
         y.style.right = "5px";
-        a.className = "btn";
-        b.className += " white-btn";
         x.style.opacity = 0;
         y.style.opacity = 1;
     }
 
+    function validateLoginForm() {
+        var email = document.getElementById("login-email").value;
+        var password = document.getElementById("login-password").value;
+        if (!email.includes("@")) {
+            alert("Por favor, insira um email válido.");
+            return false;
+        }
+        if (!/[A-Z]/.test(password)) {
+            alert("A senha deve conter pelo menos uma letra maiúscula.");
+            return false;
+        }
+        window.location.href = "./dashboard.html";
+        return false; 
+    }
+
+    function validateRegisterForm() {
+        var email = document.getElementById("register-email").value;
+        var password = document.getElementById("register-password").value;
+        if (!email.includes("@")) {
+            alert("Por favor, insira um email válido.");
+            return false;
+        }
+        if (!/[A-Z]/.test(password)) {
+            alert("A senha deve conter pelo menos uma letra maiúscula.");
+            return false;
+        }
+        return true;
+    }
 </script>
 
 </body>
